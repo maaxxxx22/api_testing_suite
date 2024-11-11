@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  api-testing:
+    image: python:3.9
+    volumes:
+      - .:/api_testing_suite
+    working_dir: /api_testing_suite
+    command: pytest --html=reports/report.html --self-contained-html
